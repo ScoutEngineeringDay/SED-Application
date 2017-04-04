@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% block content %}
+
+{% include "sedUI/includes/makebadge.html" %}
+<br>
+<button class="btn btn-primary btn-lg" id="savebadge">Download Badge</button>
+
+<script type="text/javascript" src="{% static '/js/jspdf.debug.js' %}"></script>
+<script type="text/javascript" src="{% static '/js/html2canvas.js' %}"></script>
+<script>
+  $( document ).ready(function() {
+    $('#savebadge').click(function () {
+      html2canvas($("#scoutbadge"), {
+        background :'#FFFFFF',
+        onrendered: function(canvas) {
+            // canvas is the final rendered <canvas> element
+            var imgData = canvas.toDataURL("image/jpeg");
+            var pdf = new jsPDF();
+
+            pdf.addImage(imgData, 'JPEG', 10, 10);
+            pdf.save("scoutbadge.pdf");
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

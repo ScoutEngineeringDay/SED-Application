@@ -1,0 +1,442 @@
+ol {
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+}
+input[type=password] {
+    box-sizing: border-box;
+}
+/*------------------Register-------------------*/
+.submit {
+    padding: 10px;
+}
+
+/*------------------NewNavBar-------------------*/
+.navbar-header>a {
+    width: 100%;
+    height: 100%;
+}
+.banner-image1 {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+img {
+    vertical-align: middle;
+}
+.navbar-banner {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.banner-image2 {
+    height: 100%;
+    vertical-align: middle;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.navbar-brand1 {
+    vertical-align: center;
+    text-align: center;
+}
+.navbar-top {
+    margin-bottom: 0 !important;
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    .navbar-top {
+    height: 20px;
+  }
+}
+/*------------------LoginOrRegister-------------------*/
+.form-signin-heading {
+    text-align: center;
+}
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+
+/*Form Wizard*/
+.bs-wizard {
+  margin-bottom: 30px;
+  border-bottom: solid 1px #b3b3b3;
+  padding: 0 0 10px 0;
+}
+.bs-wizard .bs-wizard-step {
+  padding: 0;
+  position: relative;
+}
+.bs-wizard .bs-wizard-step .bs-wizard-step {
+
+}
+.bs-wizard .bs-wizard-step {
+  color: #595959;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.bs-wizard .bs-wizard-stepnum {
+  color: #595959;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.bs-wizard .bs-wizard-step .bs-wizard-info {
+  color: #999;
+  font-size: 14px;
+}
+.bs-wizard .bs-wizard-step .bs-wizard-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #3399ff;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+}
+.bs-wizard .bs-wizard-step .bs-wizard-dot:after {
+  content: ' ';
+  width: 14px;
+  height: 14px;
+  background: #0073e6;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.bs-wizard .bs-wizard-step .progress {
+  position: relative;
+  border-radius: 0px;
+  height: 8px;
+  box-shadow: none;
+  margin: 20px 0;
+}
+.bs-wizard .bs-wizard-step .progress .progress-bar {
+  width:0px;
+  box-shadow: none;
+  background: #3399ff;
+}
+.bs-wizard .bs-wizard-step.complete .progress .progress-bar {
+  width:100%;
+}
+.bs-wizard .bs-wizard-step.active .progress .progress-bar {
+  width:50%;
+}
+.bs-wizard .bs-wizard-step:first-child.active .progress .progress-bar {
+  width:0%;
+}
+.bs-wizard .bs-wizard-step:last-child.active .progress .progress-bar {
+  width: 100%;
+}
+.bs-wizard .bs-wizard-step.disabled .bs-wizard-dot {
+  background-color: #f5f5f5;
+}
+.bs-wizard .bs-wizard-step.disabled .bs-wizard-dot:after {
+  opacity: 0;
+}
+.bs-wizard .bs-wizard-step:first-child  .progress {
+  left: 50%;
+  width: 50%;
+}
+.bs-wizard .bs-wizard-step:last-child .progress {
+  width: 50%;
+}
+.bs-wizard .bs-wizard-step.disabled a.bs-wizard-dot{
+  pointer-events: none;
+}
+/*END Form Wizard*/
+
+/*------------------CourseList-------------------*/
+span[role="button"] {
+    cursor: pointer;
+}
+
+.courseName{
+    font-size: 24px;
+}
+.courseInfo .showOnHover {
+    display: none;
+}
+.courseInfo:hover {
+    box-shadow: 0px 0px 4px black;
+    border: 1px solid #687D6D;
+}
+.courseInfo:hover .showOnHover {
+    display: inline-block;
+}
+.courseInfo a {
+    color: black;
+}
+.courseInfo a:hover {
+    color: black;
+    text-decoration: none;
+}
+.carousel-inner img {
+  margin: auto;
+  width: auto;
+  min-height: 600px;
+  max-height: 600px;
+  height: 600px;
+}
+
+.table {
+  font-size: 18px;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #99ccff;
+}
+.blueLink:link    {
+    background-color:transparent;
+    text-decoration:none
+}
+.blueLink:visited {
+    background-color:transparent;
+    text-decoration:none
+}
+.blueLink:hover   {
+    background-color:transparent;
+    text-decoration:underline;
+}
+.blueLink:active  {
+    background-color:transparent;
+    text-decoration:none
+}
+/*------------------Contact-------------------*/
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+}
+.h1 small {
+font-size: 24px;
+}
+/*------------------About-------------------*/
+.blackLink:link {
+    white-space: nowrap;
+    font-size: 20px;
+    color:black;
+    background-color:transparent;
+    text-decoration:none
+}
+.blackLink:visited {
+    color:black;
+    background-color:transparent;
+    text-decoration:none
+}
+.blackLink:hover   {
+    color:black;
+    background-color:transparent;
+    text-decoration:none
+}
+.blackLink:active  {
+    color:black;
+    background-color:transparent;
+    text-decoration:none
+}
+.left-float {
+    float: left;
+    width: 50%;
+}
+.center-float {
+    float: left;
+    width: 50%;
+}
+.right-float {
+    float: right;
+    width: 50%;
+}
+
+
+
+.btn-action {
+  margin: 3px;
+}
+
+@media (max-width: 767px) {
+  .left-couses {
+    float: left;
+    width: auto;
+  }
+  .right-couses {
+    float: left;
+    width: auto;
+  }
+  .btn-action {
+    width: 100%;
+  }
+  .ul-links {
+    width: 100%;
+    float: left;
+  }
+  .non-mobile-friendly {
+    display: none;
+  }
+}
+
+.scoutbadge {
+  width: 3.75in !important;
+  height: 2.8125in !important;
+  border-style: solid;
+  padding: 10px;
+  background-color: #ffffff;
+}
+.scoutbadgeFullName {
+  width: 3.75in !important;
+  height: 0.5in !important;
+  border-style: solid;
+  padding: 10px;
+  background-color: #ffffff;
+  position: relative;
+}
+.scoutbadgeall {
+  width: 3in;
+  height: 2.25in;
+  border-style: solid;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.badge-center {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.badge-top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 24px;
+}
+
+.badge-top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 24px;
+}
+
+.badge-bottom-left {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.badge-bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.modal-header {
+  padding: 9px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #0480be;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-topright: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.badges-row
+{
+    display: table;
+    table-layout: fixed; /*Optional*/
+}
+.badges-column
+{
+    display: table-cell;
+}
+.section-to-only-print {
+  visibility: hidden;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .section-to-print, .section-to-only-print, .section-to-print * {
+    visibility: visible !important;
+  }
+  .section-to-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .donotprint { display: none !important; }
+  .page-break	{ page-break-before: always !important; }
+}
+
+.page-break	{
+  page-break-before: always !important;
+}
+
+.scoutbadge {
+    page-break-inside: avoid;
+}

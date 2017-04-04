@@ -1,0 +1,153 @@
+{% block content %}
+<script>
+	jQuery(document).ready(function(){
+		$("#id_1-email_confirm").focusout(function () {
+			var email_confirm = document.getElementById("id_1-email_confirm");
+    	var message = document.getElementById('confirmMessage');
+			var email = document.getElementById("id_1-email");
+			var goodColor = "#66cc66";
+    	var badColor = "#ff6666";
+			var orgColor = "#ffffff";
+
+			if (email.value != email_confirm.value) {
+				email_confirm.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Oops, Emails Do Not Match!";
+				email_confirm.setCustomValidity('Emails Must be Matching.');
+			}
+			else {
+					email_confirm.style.backgroundColor = goodColor;
+	        message.style.color = goodColor;
+	        message.innerHTML = "Emails Match!";
+					email_confirm.setCustomValidity('');
+					console.log("Wait 2 Seconds");
+					setTimeout(function(){ setViewNormal(); }, 2000);
+					console.log("2 Seconds Up");
+			}
+			function setViewNormal() {
+				email_confirm.style.backgroundColor = orgColor;
+				message.innerHTML = "";
+			}
+		});
+	});
+</script>
+<form action="/registration/" method="post" style="width: 500px; margin: 0 auto"> {% csrf_token %}
+	{{ wizard.management_form }}
+	<div>
+		<div class="form-group">
+			<label for="InputFirstName">Scout Information</label>
+			<div class="input-group">
+				{{wizard.form.first_name}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.last_name}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.affiliation}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.unit_number}}
+				{% if wizard.form.unit_number.errors %}
+				<p style="color: red"><b><i>Must be a positive number</i></b></p>
+				{% endif %}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-lg-16">
+				{{wizard.form.phone}}
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="InputEmail">Enter Email</label>
+			<div class="input-group">
+				{{wizard.form.email}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.email_confirm}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+			<span id="confirmMessage" class="confirmMessage"></span>
+		</div>
+
+		<div class="form-group">
+			<label for="EmergencyContact">Emergency Contact Information</label>
+			<div class="input-group">
+				{{wizard.form.emergency_first_name}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.emergency_last_name}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.emergency_phone}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.emergency_email}}
+				<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="Medical">Medical Information</label>
+			<div class="input-group">
+				{{wizard.form.medical_issues}} Medical Issues or Special Needs
+			</div>
+		</div>
+		{% if wizard.form.medical_issues %}
+			<div class="form-group">
+				<div class="col-lg-16">
+				{{wizard.form.medical_notes}}
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="form-group">
+			<label for="Allergy">Allergy Information</label>
+			<div class="input-group">
+				{{wizard.form.allergy_issues}} Notable Allergies
+			</div>
+		</div>
+		{% if wizard.form.allergy_issues %}
+			<div class="form-group">
+				<div class="col-lg-16">
+				{{wizard.form.allergy_notes}}
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="form-group">
+			<div class="input-group">
+				{{wizard.form.photo}} I approve the use of photos taken at the event.
+			</div>
+		</div>
+	</div>
+	<br>
+	<div align="center">
+	<!-- 	{{wizard.form.captcha}} -->
+		<input type="submit" name="submit" id="submit" value="Next" class="btn btn-primary">
+	</div>
+
+</form>
+{% endblock %}

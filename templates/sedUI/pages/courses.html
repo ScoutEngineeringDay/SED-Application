@@ -1,0 +1,22 @@
+{% extends "sedUI/base/header.html" %}
+{% load staticfiles %}
+{% block content %}
+	{% if all_courses %}
+		{% for course in all_courses %}
+			{% if course.course_name != "None" or course.course_name == "none" %}
+			<div class="container">
+				<a href="/course_detail/{{course.course_id}}">
+					<div class="well well-sm courseInfo">
+						<p class="courseName"><b> {{course.course_name}} </b></p>
+							<div class="showOnHover">
+								<p> {{course.course_description}} </p>
+							</div>
+					 </div>
+				</a>
+			</div>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		<h4> You don't have any courses </h4>
+	{% endif %}
+{% endblock %}
